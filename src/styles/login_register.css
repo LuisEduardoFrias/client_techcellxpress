@@ -1,0 +1,61 @@
+/**/
+.container-login_register {
+  max-width: 400px;
+  padding: 5px;
+  background-color: var(--border-color);
+  border: var(--border-width) solid var(--border-color1);
+  border-radius: Calc(var(--border-radius) + 6px);
+  box-shadow: 0 0 4px 2px white;
+  color: black;
+  
+  >div form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    
+    >label {
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    
+    >button {
+      color: var(--border-color);
+      border: none;
+      font-weight: bold;
+      background-color: black;
+      background-color: var(--theme-9th);
+      border-radius: Calc(var(--border-with) + 4px);
+    }
+  }
+  
+  >button {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+    border-radius: Calc(var(--border-with) + 4px);
+  }
+  
+  >button:hover i {
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px;
+    height: auto;
+  }
+  
+  >button:active i {
+    transform: scale(.9);
+  }
+  
+  >button:disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+  }
+}

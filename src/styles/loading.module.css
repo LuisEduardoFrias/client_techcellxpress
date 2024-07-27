@@ -1,0 +1,39 @@
+/**************/
+.containerLoading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  /* background-color: #a2a2a269; */
+  top: 0px;
+  left: 0px;
+  /* border: 3px solid red; */
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  backdrop-filter: blur(.5px);
+}
+
+.ldDualRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  z-index: 99;
+  background-color: transparent;
+  display: block;
+  border: 8px double #01b4ab;
+  border-inline-end: 6px double #028b83;
+  border-block-end: 6px double #014f4b;
+  border-inline-start: 10px double transparent;
+  border-radius: 50%;
+  animation: ld-dual-ring 1.2s ease-in-out infinite backwards;
+}
+
+@keyframes ld-dual-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,99 @@
+/**/
+.container-record {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  color: white;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 90px 1fr 1fr;
+  grid-template-areas: "h2" "btns" "list";
+  justify-items: center;
+  align-items: center;
+  
+  >h2 {
+    grid-area: h2;
+    text-align: center;
+    font-weight: bold;
+    height: 100%;
+  }
+  
+  >div {
+    grid-area: btns;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2px;
+    
+    >div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  >button {
+    height: 45px;
+    width: 200px;
+  }
+  
+  >.list-deleted-product {
+    grid-area: list;
+    justify-self: start;
+    overflow-x: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: inset 0 0 10px 1px var(--theme-bg1);
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    
+    >h3 {
+      font-weight: 600;
+      font-size: 30px;
+    }
+    
+    >table {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.delete-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #2980b9;
+}
+
+
+@media (width < 700px) {
+  .container-record {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 140px 1fr 50px;
+    grid-template-areas: "h2" "btns" "list";
+    grid-row-gap: 20px;
+    
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+/***/
+.container-add-update {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+
+  >h2 {
+    text-align: center;
+  }
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--theme-9th);
+  color: black;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  >button {
+    width: 200px;
+    height: 25px;
+    background-color: var(--theme-1st);
+    color: var(--font-color1);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #a9a9a9;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+legend {
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+/* Estilos para hacer el formulario responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 10px;
+  }
+  
+  input {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  input {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,108 @@
+/***/
+#tridente-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  color: var(--font-color1);
+}
+
+#tridente-table thead tr th {
+  background-color: var(--theme-0);
+}
+
+
+#tridente-table th {
+  background-color: var(--theme-bg1);
+  color: #333;
+  font-weight: bold;
+}
+
+#tridente-table th,
+#tridente-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  width: 10%;
+  
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+tr:hover {
+  background-color: #f9d5d5;
+  /* Color de resaltado al pasar el cursor */
+}
+
+tr.selected {
+  background-color: #fdc2c299;
+  /* Color de selección al hacer clic */
+}
+
+#tridente-table tbody tr:nth-child(odd) {
+  background-color: var(--theme-bg1);
+}
+
+#tridente-table tbody tr:nth-child(even) {
+  background-color: var(--theme-bg1);
+}
+
+.btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid salmon;
+  border-radius: 4px;
+  color: white;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-update {
+  background-color: #4CAF50;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+
+.btn:hover {
+  border: 1px solid sandybrown;
+  box-shadow: 0 0 3px 1px greenyellow;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+tfoot,
+tr,
+td {
+  width: 100%;
+}
+
+tfoot tr td {
+  --margin-rigth: 15px;
+  color: var(--font-color1);
+  background-color: var(--theme-9th);
+  height: 50px;
+  
+  >input {
+    width: 50px;
+    text-align: center;
+    height: 30px;
+    margin-inline-end: var(--margin-rigth);
+  }
+  
+  >span {
+    font-weight: 500;
+    margin-inline-end: var(--margin-rigth);
+  }
+  
+  >button {
+    margin-inline-end: var(--margin-rigth);
+    background-color: var(--theme-bg);
+    color: var(--font-color);
+    padding: 3px;
+    border-radius: 6px;
+  }
+}

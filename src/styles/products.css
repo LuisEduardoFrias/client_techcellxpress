@@ -1,0 +1,46 @@
+/***/
+.container-products {
+  width: 100%;
+  height: 100%;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 30px 50px 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-template-areas:
+    "header"
+    ". "
+    "btn"
+    "table"
+  ;
+  
+  >h2 {
+    grid-area: header;
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  >button {
+    grid-area: btn;
+    border-radius: 5px;
+    height: 45px;
+    width: 150px;
+    font-weight: 700;
+    background-color: var(--theme-9th);
+  }
+  
+  >.container-table {
+    grid-area: table;
+    min-height: 100px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: inset 0 0 10px 1px var(--theme-bg1);
+    display: grid;
+    place-content: center;
+    overflow-x: auto;
+  }
+}

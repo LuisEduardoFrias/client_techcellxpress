@@ -1,0 +1,112 @@
+/***/
+.container-login {
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 50px;
+  
+  >header {
+    height: 150px;
+    padding: 10px;
+    background-color: white;
+    display: grid;
+    place-content: center;
+    
+    >img {
+      height: 130px;
+      width: auto;
+    }
+  }
+  
+  >main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+    >.container-form {
+      width: 300px;
+      padding: 5px;
+      background-color: var(--border-color);
+      border: var(--border-width) solid var(--border-color1);
+      border-radius: calc(var(--border-radius) + 6px);
+      box-shadow: 0 0 4px 2px white;
+      color: black;
+      align-self: flex-start;
+      
+      >form {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-block-end: 10px;
+        
+        >label {
+          font-weight: 500;
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+        
+        >button {
+          color: var(--border-color);
+          border: none;
+          font-weight: bold;
+          background-color: black;
+          background-color: var(--theme-9th);
+          border-radius: calc(var(--border-with) + 4px);
+        }
+      }
+      
+      >button {
+        width: 100%;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        background-color: transparent;
+        color: black;
+        border-radius: calc(var(--border-with) + 4px);
+      }
+      
+      >button:hover i {
+        border: 2px solid black;
+        border-radius: 50%;
+        font-size: 12px;
+        padding: 2px;
+        height: auto;
+      }
+      
+      >button:active i {
+        transform: scale(.9);
+      }
+      
+      >button:disabled {
+        background-color: gray;
+        color: white;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container-login {
+    padding: 10px;
+  }
+  
+  .container-login>header {
+    height: 100px;
+    padding: 5px;
+  }
+  
+  .container-login>header>img {
+    height: 100px;
+  }
+  
+  .container-login>main .container-form {
+    width: 90%;
+  }
+}

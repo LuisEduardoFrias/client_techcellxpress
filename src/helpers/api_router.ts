@@ -1,6 +1,6 @@
 
 const base = process.env.BASE_API_TECHCELLXPRESS;
-
+console.log("base url api: ", base)
 export const baseApiTechcellxpress = base;
 
 export const admin = {

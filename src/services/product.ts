@@ -41,7 +41,7 @@ class Product {
       body: product,
       token: token,
     }
-    
+
     const { error, data } = await Fetch(datafetch);
     console.log("desee service error: ", error, "data: ", data);
     return { error, data };

@@ -12,6 +12,13 @@
   justify-items: center;
   align-items: center;
   
+  >#back-btn {
+    grid-area: h2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
   >h2 {
     grid-area: h2;
     text-align: center;
@@ -34,7 +41,7 @@
     }
   }
   
-  >button {
+  >.delete-btn {
     height: 45px;
     width: 200px;
   }
@@ -82,11 +89,23 @@
   background-color: #2980b9;
 }
 
+.container-progress {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  
+  >input {
+    accent-color:#2980b9 ;
+  }
+}
 
 @media (width < 700px) {
   .container-record {
     grid-template-columns: 1fr;
-    grid-template-rows: 40px 140px 1fr 50px;
+    grid-template-rows: 40px 160px 1fr 50px;
     grid-template-areas: "h2" "btns" "list";
     grid-row-gap: 20px;
     

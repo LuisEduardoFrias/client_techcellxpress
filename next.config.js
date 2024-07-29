@@ -4,8 +4,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_API_TECHCELLXPRESS: "https://api-techcellxpress-4addxp125-luiseduardofrias-projects.vercel.app",
-    NEXT_PUBLIC_SECRET_JWT_KEY: "3$t0EsUnC0d1guBonoS3cr3t0_p@r@-t0d0L4@p"
+    BASE_API_TECHCELLXPRESS: "http://localhost:3000",
+    SECRET_JWT_KEY: "3$t0EsUnC0d1guBonoS3cr3t0_p@r@-t0d0L4@p"
   },
 }
 

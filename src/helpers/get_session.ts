@@ -4,7 +4,6 @@ import { getCookie } from 'hp/local_cookie';
 
 export default async function GetSession(): userInit {
   const jwt = getCookie('access_token');
-  console.log("get cookie: ", jwt)
 
   if (jwt === undefined) return null;
 
@@ -13,7 +12,7 @@ export default async function GetSession(): userInit {
     return session.payload.data.user;
   }
   catch (error) {
-    console.error("token no valido. ", error)
+    console.error("JWT isn't valid.");
     return null;
   }
 }

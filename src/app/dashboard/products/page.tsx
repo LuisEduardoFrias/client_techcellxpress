@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react';
 import Product from 'sv/product'
+import BackButton from 'cp/back_button'
 import { getCookie } from 'hp/local_cookie'
 import Loading from 'cp/loading'
 import Table from 'cp/table'
@@ -46,6 +47,7 @@ export default function Products() {
 
   return (
     <div className="container-products" >
+        <BackButton />
       <h2>Products</h2>
       <button onClick={handleAddProduct}>Add new phone</button>
       <div className="container-table">

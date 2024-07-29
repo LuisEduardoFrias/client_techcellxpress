@@ -15,6 +15,13 @@
     ". . .";
   color: white;
   
+  >#back-btn {
+    grid-area: title;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
   >h2 {
     grid-area: title;
     width: 100%;
@@ -40,7 +47,7 @@
     }
   }
   
-  >button {
+  >button:nth-child(5) {
     grid-area: btn;
     width: 100px;
     height: 25px;

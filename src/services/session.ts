@@ -1,6 +1,6 @@
 //
 import Fetch, { Method, DataFetch } from "hp/fetch"
-import { session as _session} from 'hp/api_router'
+import { session as _session } from 'hp/api_router'
 
 class Session {
   async logIn(user) {
@@ -9,7 +9,7 @@ class Session {
       method: Method.POST,
       body: user,
     }
-
+    
     return await Fetch(datafetch);
   }
   //

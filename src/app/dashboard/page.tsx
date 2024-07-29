@@ -5,6 +5,7 @@ import useStore from "str/store";
 import { getCookie } from 'hp/local_cookie';
 import { PhoneCardDto } from 'dto/phone_dto'
 import ProductService from 'sv/product';
+import getColorName from 'hp/get_color_name';
 import Loading from 'cp/loading';
 import "st/home.css"
 
@@ -31,10 +32,18 @@ export default function Home() {
       let dataFilted: PhoneCardDto[] = dataPhone;
 
       if (dataFilted) {
-        if (filter.color !== 'null')
+        if (filter.color !== 'null') {
           dataFilted = [...dataFilted?.filter(phone => Reflect.get(phone, "color") === filter.color)];
-        if (filter.model !== 'null')
+
+          const modelItems = new Set(dataFilted?.map((item: PhoneCardDto) => Reflect.get(item, "model")));
+          setSelectModel(modelItems)
+        }
+        if (filter.model !== 'null') {
           dataFilted = [...dataFilted?.filter(phone => Reflect.get(phone, "model") === filter.model)];
+
+          const colorItems = new Set(dataFilted?.map((item: PhoneCardDto) => Reflect.get(item, "color")));
+          setSelectColor(colorItems)
+        }
       }
 
       setDataShow(dataFilted)
@@ -96,20 +105,20 @@ export default function Home() {
         <select name="model" id="model" onChange={handlerModelSelect}>
           <option key={0} value="null" >Models</option>
           {
-            dataPhone.length > 0 ? Array.from(selectModel).map(e => <option key={e} value={e}>{e}</option>) : null
+            dataPhone?.length > 0 ? Array.from(selectModel).map(e => <option key={e} value={e}>{e}</option>) : null
           }
         </select>
 
         <select name="color" id="color" onChange={handlerColorSelect}>
           <option key={0} value="null" >Colors</option>
           {
-            dataPhone.length > 0 ? Array.from(selectColor).map(e => <option key={e} value={e}>{e}</option>) : null
+            dataPhone?.length > 0 ? Array.from(selectColor).map(e => <option key={e} value={e}>{getColorName(e)}</option>) : null
           }
         </select>
       </div>
       <div className="container-phone">
         {
-          dataPhone.length > 0 ?
+          dataPhone?.length > 0 ?
             dataShow.map(e =>
               <div key={e.id} className="container-card">
                 <div>
@@ -123,6 +132,6 @@ export default function Home() {
         }
       </div>
       {loading && <Loading />}
-    </div>
+    </div >
   )
 }

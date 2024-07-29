@@ -47,7 +47,7 @@ async function _fetch(datafetch: DataFetch) {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   headers.append('Accept', 'application/json');
-  //  headers.append('Access-Control-Allow-Origin', process.env.BASE_API_TECHCELLXPRESS);
+  headers.append('Access-Control-Allow-Origin', process.env.BASE_API_TECHCELLXPRESS);
   // headers.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   // headers.append('Access-Control-Allow-Credentials', 'true');
   if (datafetch.token) {
@@ -56,12 +56,12 @@ async function _fetch(datafetch: DataFetch) {
 
   return await fetch(datafetch.url, {
     method: datafetch.method ?? Method.GET,
-    //mode: 'cors',
-    //redirect: 'follow',
+    mode: 'cors',
+    redirect: 'follow',
     //cache: 'no-cache',
-   // credentials: 'include',
-    //referrerPolicy: 'no-referrer',
+    credentials: 'include',
     headers: headers,
+    referrerPolicy: 'no-referrer',
     body: (datafetch.body ? JSON.stringify(datafetch.body) : null),
   });
 }

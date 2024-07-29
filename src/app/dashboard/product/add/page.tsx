@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { getCookie } from 'hp/local_cookie';
 import PhoneModel, { CapacityModel } from 'md/phone_model'
 import Product from 'sv/product'
+import BackButton from 'cp/back_button'
 import 'st/add_update_product.css'
 
 export default function Add() {
@@ -25,6 +26,7 @@ export default function Add() {
 
   return (
     <dev className="container-add-update">
+        <BackButton />
       <h2>Add product</h2>
 
       <Form<Phone> onService={handlerService} textBtn="Send">

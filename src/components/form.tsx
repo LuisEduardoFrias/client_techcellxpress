@@ -21,59 +21,61 @@ export default function Form<T>({ children, textBtn, onService }: Props<T>) {
   const [loading, setLoading] = useState(false);
 
   function validateError(children: React.ReactNode, isError: boolean): boolean {
-    /*
-        React.Children.map(children, (child) => {
-          if (child instanceof HTMLSpanElement) {
-            hiddenSpan(child)
-          }
-        });
-    
-        //--------------------------------------------------
-    
-        function searchSpan(elementFather: HTMLInputElement | HTMLSelectElement) {
-          React.Children.map(children, (child_1) => {
-            if (child_1 instanceof HTMLSpanElement) {
-              if (elementFather.id === child_1.dataset.for) {
-                if (elementFather.value === "" && child_1?.dataset?.required) {
-                  showSpan(child_1, errorType.required)
-                  isError = true;
-                  return;
-                }
-    
-                if (child_1?.dataset.minlength && elementFather.value?.length < parseInt(child_1?.dataset?.minlength?.split(",")[0])) {
-                  showSpan(child_1, errorType.minlength)
-                  isError = true;
-                  return;
-                }
-              }
+/*
+    for (const child_1 of children) {
+      if (child_1 instanceof HTMLSpanElement) {
+        hiddenSpan(child_1)
+      }
+    }
+
+    //--------------------------------------------------
+
+    function searchSpan(elementFather: HTMLInputElement | HTMLSelectElement) {
+      for (const child_1 of children) {
+        if (child_1 instanceof HTMLSpanElement) {
+          if (elementFather.id === child_1.dataset.for) {
+            if (elementFather.value === "" && child_1?.dataset?.required) {
+              showSpan(child_1, errorType.required)
+              isError = true;
+              break;
             }
-          })
+
+            if (child_1?.dataset.minlength && elementFather.value?.length < parseInt(child_1?.dataset?.minlength?.split(",")[0])) {
+              showSpan(child_1, errorType.minlength)
+              isError = true;
+              break;
+            }
+          }
         }
-    
-        React.Children.map(children, (child: React.ReactNode) => {
-          if (isValidElement(child)) {
-            const element = child as unknown as HTMLElement;
-            if (element instanceof HTMLInputElement) {
-              searchSpan(element as HTMLInputElement);
-            } else if (element instanceof HTMLSelectElement) {
-              searchSpan(element as HTMLSelectElement);
-            } else if (React.Children.count(element.props.children) > 0) {
-              isError = validateError(element.props.children, isError);
-            }
-          }
-        });
-    
-        //--------------------------------------------------
-    
-        if (!isError)
-          React.Children.map(children, (child) => {
-            if (child instanceof HTMLSpanElement) {
-              hiddenSpan(child)
-            }
-          });
-    
-        return isError;
-        */
+      }
+    }
+
+    for (const child of children) {
+      if (child instanceof HTMLInputElement) {
+        searchSpan(child);
+      }
+
+      if (child instanceof HTMLSelectElement) {
+        searchSpan(child);
+      }
+
+      if (child?.children) {
+        isError = validateError(child?.children, isError)
+      }
+    }
+
+    //--------------------------------------------------
+
+    if (!isError)
+      for (const child_1 of children) {
+        if (child_1 instanceof HTMLSpanElement) {
+          const span = document.querySelector(`.${child_1.classList[0].trim()}`)
+          span.style.visibility = 'hidden';
+        }
+      }
+
+    return isError;
+    */
     return false;
   }
 

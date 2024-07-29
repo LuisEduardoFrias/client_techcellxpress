@@ -72,6 +72,7 @@
   
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fill, 200px);
   grid-gap: 10px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -79,7 +80,7 @@
 
 .container-card {
   width: 200px;
-  height: 200px;
+  height: 100%;
   border: var(--border-width) solid var(--border-color1);
   background-color: var(--theme-bg1);
   border-radius: Calc(var(--border-radius) + 5px);
@@ -102,7 +103,7 @@
   >div:nth-child(1) img {
     background-size: fill;
     width: 100%;
-    height: auto;
+    height: 170px;
   }
   
   >div:last-child {

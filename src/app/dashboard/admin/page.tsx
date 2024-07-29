@@ -9,7 +9,7 @@ import Table from 'cp/table'
 import 'st/admin.css'
 
 export default function Record() {
-  // const [ioConnet, ioEmit, ioClose] = socket("connect");
+  const [ioConnet, ioEmit, ioClose] = socket("connect");
   const [progress, setProgress] = useState(0);
 
   const headers = [
@@ -20,13 +20,13 @@ export default function Record() {
 
   useEffect(() => {
     return () => {
-      //ioClose("removeAll");
+      ioClose("ProgressRemoveDb");
     }
   }, [])
 
   function handlerDeleteAll() {
-    // ioConnet("removeAll", (value: number) => { setProgress(value) });
-    //ioEmit("removeAll", getCookie("access_token"));
+    ioConnet("ProgressRemoveDb", (value: number) => { setProgress(value) });
+    ioEmit("removeAll", getCookie("access_token"));
 
     /*
     (async () => {

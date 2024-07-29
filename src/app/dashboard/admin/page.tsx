@@ -31,7 +31,7 @@ export default function Record() {
     return () => {
       ioClose("ProgressRemoveDb");
     }
-  }, [loading, data])
+  }, [loading, data, ioConnet, ioClose])
 
   function handlerDeleteAll() {
     ioEmit("removeAll", getCookie("access_token"));

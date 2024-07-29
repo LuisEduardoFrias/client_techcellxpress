@@ -34,7 +34,7 @@ export default function Update() {
       setProduct(data);
       setLoading(false);
     })()
-  }, [])
+  }, [params])
 
   /*
   I'm not going to check the fields this time!

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { notFound } from 'next/navigation'
@@ -30,7 +31,7 @@ export default function Delete() {
       setProduct(data);
       setLoading(false);
     })()
-  }, [])
+  }, [params])
 
   function handlerDelete() {
     if (!confirm('Are you sure?')) {
@@ -55,7 +56,7 @@ export default function Delete() {
 
   return (
     <div className="container-delete" >
-        <BackButton />
+      <BackButton />
       <h2>Delete page</h2>
 
       <div className="container-loading">
@@ -65,7 +66,8 @@ export default function Delete() {
       <div>
         {
           product?.imgUrl &&
-          <img src={product?.imgUrl} alt={`Image of product ${product?.brand} ${product?.model}.`} />
+          <Image src={product?.imgUrl} alt={`Image of product ${product?.brand} ${product?.model}.`} 
+          priority width="300" height="300"/>
         }
       </div>
 

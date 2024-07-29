@@ -1,5 +1,6 @@
 //
 'use client'
+import Image from 'next/image';
 import { useEffect, useState, ChangeEvent } from 'react';
 import useStore from "str/store";
 import { getCookie } from 'hp/local_cookie';
@@ -49,7 +50,7 @@ export default function Home() {
       setDataShow(dataFilted)
       setLoading(false);
     }
-  }, [filter]);
+  }, [filter, dataPhone]);
 
   function executeServiceProductSearch(text: string = "undefined") {
     setLoading(true);
@@ -122,7 +123,7 @@ export default function Home() {
             dataShow.map(e =>
               <div key={e.id} className="container-card">
                 <div>
-                  <img loading="lazy" src={e.imgUrl} alt={e.model} />
+                  <Image src={e.imgUrl} alt={e.model} priority width="300" height="300" />
                 </div>
                 <div>
                   <span>{`${e.brand} ${e.model}`}</span>
